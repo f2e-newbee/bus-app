@@ -1,12 +1,14 @@
 import React from "react";
-import { Provider } from "react-redux";
-import { store } from "./store";
+import { useSelector } from "react-redux";
+import { selectFetch } from "./store/reducer/fetchReducer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NearByStop, RouteQuery, Home } from "./pages";
+import { Loading } from "./components";
 
 const App = () => {
+  const { loading } = useSelector(selectFetch);
   return (
-    <Provider store={store}>
+    <>
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
@@ -14,7 +16,8 @@ const App = () => {
           <Route path="/route-query" element={<RouteQuery />}></Route>
         </Routes>
       </BrowserRouter>
-    </Provider>
+      {loading && <Loading />}
+    </>
   );
 };
 

@@ -38,8 +38,9 @@ export const fetchSlice = createSlice({
 
 const { actions, reducer } = fetchSlice;
 
+export default reducer;
 // Extract and export each action creator by name
 export const { startFetch, endFetch, setError } = actions;
-// export const selectLoading = (state) => state.fetch.loading;
+// get state
 export const selectFetch = (state) => state.fetch;
-export default reducer;
+// export const selectLoading = (state) => state.fetch.loading;
