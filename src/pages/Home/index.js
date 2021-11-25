@@ -15,8 +15,8 @@ export const Home = () => {
       <h2 className="font-semibold text-5xl mb-2">WhereIsMyBus</h2>
       <h4 className="text-xl">Never miss the bus again.</h4>
       <Stack direction="row" spacing={6} className="mt-8">
-        <Block title="路線查詢" icon={<SearchIcon />} link="/near-by-stop" />
-        <Block title="附近站牌" icon={<ArrowIcon />} link="/route-query" />
+        <Block title="路線查詢" icon={<SearchIcon />} link="/route-query" />
+        <Block title="附近站牌" icon={<ArrowIcon />} link="/near-by-stop" />
       </Stack>
     </div>
   );
