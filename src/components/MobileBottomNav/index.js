@@ -15,7 +15,7 @@ export const MobileBottomNav = () => {
         <NavLink
           to="/route-query"
           className={({ isActive }) =>
-            isActive ? "border-b-4 text-white" : "border-b-4 text-gray-400"
+            isActive ? " text-white" : " text-gray-100"
           }
         >
           <Stack
@@ -30,7 +30,7 @@ export const MobileBottomNav = () => {
         <NavLink
           to="/near-by-stop"
           className={({ isActive }) =>
-            isActive ? "border-b-4 text-white" : "border-b-4 text-gray-400"
+            isActive ? " text-white" : "text-gray-100"
           }
         >
           <Stack
@@ -38,7 +38,7 @@ export const MobileBottomNav = () => {
             justifyContent="center"
             className="h-full py-2"
           >
-            <ArrowIcon className="w-6 h-6"/>
+            <ArrowIcon className="w-6 h-6" />
             <span className="font-semibold">附近站牌</span>
           </Stack>
         </NavLink>
