@@ -5,7 +5,7 @@ import { InputLabel, MenuItem, FormControl, Select } from "@material-ui/core";
  * 選擇縣市下拉
  */
 export const CitySelect = () => {
-  const [city, setCity] = React.useState("");
+  const [city, setCity] = useState("");
   const handleChange = (event) => {
     setCity(event.target.value);
   };
@@ -29,6 +29,7 @@ export const CitySelect = () => {
           fontWeight: "700",
           borderRadius: "1rem",
           backgroundColor: "transparent",
+          border:"white"
         }}
       >
         <MenuItem value="">請選擇</MenuItem>
