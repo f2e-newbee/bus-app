@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { selectFetch } from "./store/reducer/fetchReducer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NearByStop, RouteQuery, Home } from "./pages";
-import { Loading } from "./components";
+import { Loading, MobileBottomNav } from "./components";
 
 const App = () => {
   const { loading } = useSelector(selectFetch);
@@ -15,6 +15,7 @@ const App = () => {
           <Route path="/near-by-stop" element={<NearByStop />}></Route>
           <Route path="/route-query" element={<RouteQuery />}></Route>
         </Routes>
+        <MobileBottomNav />
       </BrowserRouter>
       {loading && <Loading />}
     </>
