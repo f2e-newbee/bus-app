@@ -12,7 +12,7 @@ export const MobileHeader = ({ title, children }) => {
       {title && (
         <h2 className="text-center text-white font-semibold my-5">{title}</h2>
       )}
-      <div className="mb-6 px-4">{children}</div>
+      <div className="">{children}</div>
     </div>
   );
 };

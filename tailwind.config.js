@@ -10,6 +10,7 @@ module.exports = {
         secondary: "#FC8E0E",
         gray: "#EFF0F8",
         "gray-dark": "#313650",
+        'gray-light':'#A4AACB'
       },
       borderRadius: {
         large: "7rem",
@@ -20,6 +21,9 @@ module.exports = {
       minHeight: {
         6: "1.5rem",
       },
+      borderWidth:{
+        '1':'1px'
+      }
     },
   },
   variants: {
