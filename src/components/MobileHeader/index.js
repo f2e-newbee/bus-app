@@ -3,7 +3,7 @@ import React from "react";
 export const MobileHeader = ({ title, children }) => {
   return (
     <div
-      className=" rounded-b-large py-2 px-4  overflow-hidden"
+      className="pt-2 px-4"
       style={{
         backgroundImage: ` linear-gradient(180deg, #151F56 0%, rgba(21, 31, 86, 0.8) 100%)`,
       }}
@@ -12,7 +12,8 @@ export const MobileHeader = ({ title, children }) => {
       {title && (
         <h2 className="text-center text-white font-semibold my-5">{title}</h2>
       )}
-      <div className="">{children}</div>
+      {children}
+      {/* <div className="">{children}</div> */}
     </div>
   );
 };
