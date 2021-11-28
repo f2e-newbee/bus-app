@@ -34,30 +34,33 @@ export const SearchBar = () => {
   const handleDelete = () => {
     setKeyWord("");
   };
+
   return (
-    <>
-      <div className="w-full h-10 bg-gray  rounded-3xl grid grid-cols-5">
-        <div className="col-span-1 h-10 flex items-center justify-center">
-          <SearchIcon className="w-3/5 h-3/5 text-gray-dark" />
-        </div>
-        <input
-          type="text"
-          placeholder="關鍵字搜尋"
-          className="col-span-3 focus:outline-none bg-transparent"
-          onFocus={handleInputFocus}
-          value={keyWord}
-          onChange={handleInputChange}
-        />
-        <div className="col-span-1 h-10 flex items-center justify-center">
-          <ClearIcon
-            className="w-3/5 h-3/5 text-gray-dark"
-            onClick={handleDelete}
-          />
-        </div>
-      </div>
-      {showKeyBoard && (
-        <BusKeyBoard handleKeyBoardClick={handleKeyBoardClick} />
-      )}
-    </>
+          <>
+            <div className="w-full h-10 bg-gray  rounded-3xl flex justify-between items-center p-2">
+              <div className="flex h-full items-center"> 
+                <div className="h-full w-auto">
+                  <SearchIcon className="h-full w-auto text-gray-dark" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="關鍵字搜尋"
+                  className="col-span-3 focus:outline-none bg-transparent"
+                  onFocus={handleInputFocus}
+                  value={keyWord}
+                  onChange={handleInputChange}
+                />
+                <div className="col-span-1 h-10 flex items-center justify-center">
+                  <ClearIcon
+                    className="w-3/5 h-3/5 text-gray-dark"
+                    onClick={handleDelete}
+                  />
+                </div>
+              </div>
+              {showKeyBoard && (
+                <BusKeyBoard handleKeyBoardClick={handleKeyBoardClick} />
+              )}
+            </div>
+          </>
   );
 };

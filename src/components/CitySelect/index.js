@@ -32,7 +32,7 @@ export const CitySelect = () => {
           border:"white"
         }}
       >
-        <MenuItem value="">請選擇</MenuItem>
+        <MenuItem value="" disabled >請選擇</MenuItem>
         {cityList.map((item) => (
           <MenuItem key={item.value} value={item.value}>
             {item.label}

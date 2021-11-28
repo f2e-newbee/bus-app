@@ -3,7 +3,7 @@ import React from "react";
 export const MobileHeader = ({ title, children }) => {
   return (
     <div
-      className="pt-2 px-4"
+      className="py-4 px-4 pb-8"
       style={{
         backgroundImage: ` linear-gradient(180deg, #151F56 0%, rgba(21, 31, 86, 0.8) 100%)`,
       }}

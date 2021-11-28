@@ -15,8 +15,8 @@ export const MobileBottomNav = () => {
         <NavLink
           to="/route-query"
           className={({ isActive }) =>
-            isActive ? " text-white" : " text-gray-100"
-          }
+          isActive ? " text-blue-100" : "text-white"
+        }
         >
           <Stack
             alignItems="center"
@@ -30,7 +30,7 @@ export const MobileBottomNav = () => {
         <NavLink
           to="/near-by-stop"
           className={({ isActive }) =>
-            isActive ? " text-white" : "text-gray-100"
+            isActive ? " text-blue-100" : "text-white"
           }
         >
           <Stack
