@@ -43,7 +43,6 @@ export const NearByStop = () => {
     }, [location, getNearBy]);
 
   function autoSearch(keyWord) {
-    console.log(keyWord);
     if(keyWord === ''){
       setFilterList(stationData);
       return

@@ -25,8 +25,20 @@ export const RouteQuery = () => {
   }, [city, getCity]);
 
   useEffect(() => {
+    function autoSearch(keyWord) {
+      if(keyWord === ''){
+        setFilterList(routeData);
+        return
+      }
+      if (keyWord && keyWord.trim()) {
+        const filter = routeData.filter((item) => {
+          return item.RouteName.Zh_tw.includes(keyWord);
+        });
+        setFilterList(filter);
+      }
+    }
     autoSearch(keyWord);
-  }, [routeData]);
+  }, [routeData,keyWord]);
 
 
   function autoSearch(keyWord) {
