@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { InputLabel, MenuItem, FormControl, Select } from "@material-ui/core";
 
 /**
  * 選擇縣市下拉
  */
-export const CitySelect = () => {
-  const [city, setCity] = useState("");
+export const CitySelect = (props) => {
+  const { city ,setCity} = props;
   const handleChange = (event) => {
     setCity(event.target.value);
   };
+
   return (
     <FormControl fullWidth>
       <InputLabel

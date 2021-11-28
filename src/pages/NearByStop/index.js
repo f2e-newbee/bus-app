@@ -1,27 +1,28 @@
 import React, { useState , useEffect , useCallback } from "react";
 import { fetchApi } from "../../service/api";
 import getGeoLocation from "../../service/GeolocationService";
-
+import MobileNearByStop from './MobileNearByStop';
 
 /**
  * 附近站牌頁面
  */
 export const NearByStop = () => {
-  const [city, setCity] = useState('Taipei');
   const [location, setLocation] = useState(null);
-  // const [stationData, setStationData] = useState(null);
-  const DISTANCE = 10000
+  const [stationData, setStationData] = useState([]);
+  const [keyWord, setKeyWord] = useState("");
+  const [filterList, setFilterList] = useState([]);
 
+  const DISTANCE = 500
   const getNearBy = useCallback(() => {
     fetchApi(
-      `/v2/Bus/Station/City/${city}?$top=30&$spatialFilter=nearby(${location.latitude}, ${location.longitude},${DISTANCE})&$format=JSON`
+      `/v2/Bus/Station/NearBy?$top=30&$?$top=30&$spatialFilter=nearby(${location.latitude}, ${location.longitude},${DISTANCE})&$format=JSON`
     ).then((response) => {
       if (response && response.status === 200) {
-        console.log(response.data);
-        // setStationData(response.data);
+        setStationData(response.data);
+        setFilterList(response.data);
       }
     });
-  }, [city,location]);
+  }, [location]);
 
   //取得使用者地理位置
   useEffect(() => {
@@ -39,9 +40,28 @@ export const NearByStop = () => {
     if (location) {
         getNearBy();
       }
-    }, [location, city, getNearBy]);
+    }, [location, getNearBy]);
 
+  function autoSearch(keyWord) {
+    console.log(keyWord);
+    if(keyWord === ''){
+      setFilterList(stationData);
+      return
+    }
+    if (keyWord && keyWord.trim()) {
+      const filter = stationData.filter((item) => {
+        return item.StationName.Zh_tw.includes(keyWord);
+      });
+      setFilterList(filter);
+    }
+  }
 
-  return <div>附近站牌</div>;
-};
+  return (<MobileNearByStop 
+            filterList={filterList}
+            keyWord={keyWord}
+            setKeyWord={setKeyWord}
+            autoSearch={autoSearch}>
+          </MobileNearByStop>
+  )
+}
 
